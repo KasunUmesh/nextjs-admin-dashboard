@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { SIDENAV_ITEMS } from "../../SIDEBAR_CONSTANTS"
+import { SideBarMenuItem } from "./sidebar-menu-item"
 
 export default function Sidebar() {
     return (
@@ -10,8 +12,12 @@ export default function Sidebar() {
                 </h3>
             </div>
 
-            <nav>
-                
+            <nav className="flex flex-col gap-2 transition duration-300">
+                {
+                    SIDENAV_ITEMS.map((item, index) => {
+                        return <SideBarMenuItem item={item}></SideBarMenuItem>
+                    })
+                }
             </nav>
         </aside>
     )
