@@ -13,11 +13,13 @@ export default function Sidebar() {
             </div>
 
             <nav className="flex flex-col gap-2 transition duration-300">
-                {
-                    SIDENAV_ITEMS.map((item, index) => {
-                        return <SideBarMenuItem item={item}></SideBarMenuItem>
-                    })
-                }
+                <div className="flex flex-col gap-2 px-4">
+                    {
+                        SIDENAV_ITEMS.map((item, index) => {
+                            return <SideBarMenuItem item={item}></SideBarMenuItem>
+                        })
+                    }
+                </div>
             </nav>
         </aside>
     )
