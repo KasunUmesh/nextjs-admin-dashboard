@@ -1,11 +1,25 @@
 import { TiThMenu } from "react-icons/ti";
 import { FaRegBell, FaEnvelope } from "react-icons/fa";
+import { Dispatch, SetStateAction } from "react";
+import classNames from "classnames";
 
-export default function Header() {
+export default function Header({toggleCollapse, setToggleCollapse} : {toggleCollapse : boolean, setToggleCollapse:Dispatch<SetStateAction<boolean>>}) {
+
+    const sideBarToggle = () => {
+        setToggleCollapse(!toggleCollapse);
+    }
+
+    const headerStyle = classNames("fixed w-full z-0 px-4 shadow-lg",
+        {
+            ["pl-[20rem]"] : !toggleCollapse,
+            ["pl-[5.6rem]"] : toggleCollapse,
+        }
+    )
+
     return (
-        <header className="fixed w-full z-0 px-4 shadow-lg pl-[20rem]">
+        <header className={headerStyle}>
             <div className="flex items-center justify-between h-16">
-                <button className="hover:bg-[#3a3f38] ml-3 rounded-md h-[30px] w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
+                <button onClick={sideBarToggle} className="hover:bg-[#3a3f38] ml-3 rounded-md h-[30px] w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
                     <TiThMenu></TiThMenu>
                 </button>
 
