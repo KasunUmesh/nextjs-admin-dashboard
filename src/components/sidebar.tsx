@@ -7,8 +7,9 @@ export default function Sidebar({toggleCollapse} : {toggleCollapse : boolean}) {
 
     const asideStyle = classNames("fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]", 
     {
-        ["w-[5.4rem]"] : toggleCollapse,
-        ["w-[20rem]"] : !toggleCollapse
+        
+        ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,
+        ["w-[20rem]"]: !toggleCollapse
     })
 
     return (
@@ -24,7 +25,7 @@ export default function Sidebar({toggleCollapse} : {toggleCollapse : boolean}) {
                 <div className="flex flex-col gap-2 px-4">
                     {
                         SIDENAV_ITEMS.map((item, index) => {
-                            return <SideBarMenuItem item={item} toggleCollapse={toggleCollapse}></SideBarMenuItem>
+                            return <SideBarMenuItem key={index} item={item} toggleCollapse={toggleCollapse}></SideBarMenuItem>
                         })
                     }
                 </div>
