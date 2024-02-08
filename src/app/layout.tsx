@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="karla.className">
         <div className="flex min-h-screen">
-          <Sidebar toggleCollapse={toggleCollapse}></Sidebar>
-          <Header toggleCollapse={toggleCollapse} setToggleCollapse={setToggleCollapse}></Header>
-          <Pagewrapper toggleCollapse={toggleCollapse}>{children}</Pagewrapper>
+          <Sidebar></Sidebar>
+          <Header></Header>
+          <Pagewrapper>{children}</Pagewrapper>
         </div>
         
       </body>

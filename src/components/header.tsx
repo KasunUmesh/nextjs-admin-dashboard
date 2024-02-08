@@ -1,12 +1,13 @@
 import { TiThMenu } from "react-icons/ti";
 import { FaRegBell, FaEnvelope } from "react-icons/fa";
-import { Dispatch, SetStateAction } from "react";
 import classNames from "classnames";
+import { useSideBarToggle } from "@/hooks/useSideBarToggle";
 
-export default function Header({toggleCollapse, setToggleCollapse} : {toggleCollapse : boolean, setToggleCollapse:Dispatch<SetStateAction<boolean>>}) {
+export default function Header() {
 
+    const {toggleCollapse, invokeToggleCollapse} = useSideBarToggle();
     const sideBarToggle = () => {
-        setToggleCollapse(!toggleCollapse);
+        invokeToggleCollapse();
     }
 
     const headerStyle = classNames("fixed w-full z-0 px-4 shadow-lg",
