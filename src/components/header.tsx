@@ -2,6 +2,7 @@ import { TiThMenu } from "react-icons/ti";
 import { FaRegBell, FaEnvelope } from "react-icons/fa";
 import classNames from "classnames";
 import { useSideBarToggle } from "@/hooks/useSideBarToggle";
+import { UserNav } from "./UserNav";
 
 export default function Header() {
 
@@ -31,9 +32,8 @@ export default function Header() {
                     </div>
 
                     <div className="order-2 flex flex-row-reverse sm:flex-row items-center gap-[15px] relative ">
-                        <p>Kasun Umesh</p>
                         <div className=" h-10 w-10 rounded-full bg-[#3a3f48] flex items-center justify-center text-center cursor-pointer">
-                            <span className="font-semibold text-sm">KU</span>
+                            <UserNav/>
                         </div>
                     </div>
   

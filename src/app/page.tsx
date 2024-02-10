@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Overview } from "./components/overview";
+import { RecentSales } from "./components/recent-sales";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
 
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
+          <Card className="border-l-[4px] border-[#4E73DF] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Total Revenue
@@ -46,7 +47,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-l-[4px] border-[#4E73DF] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Subscriptions
@@ -73,7 +74,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-l-[4px] border-[#4E73DF] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Sales</CardTitle>
               <svg
@@ -97,7 +98,7 @@ export default function Home() {
               </p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-l-[4px] border-[#4E73DF] cursor-pointer hover:shadow-lg transform hover:scale-[103%] transition duration-300 ease-out">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Active Now</CardTitle>
               <svg
@@ -135,7 +136,9 @@ export default function Home() {
               <CardTitle>Recent Sales</CardTitle>
               <CardDescription>You made 265 sales this month.</CardDescription>
             </CardHeader>
-            <CardContent>{/* <RecentSales /> */}</CardContent>
+            <CardContent>
+              <RecentSales/>
+            </CardContent>
           </Card>
         </div>
       </div>
